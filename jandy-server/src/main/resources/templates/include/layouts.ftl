@@ -1,81 +1,61 @@
 <#assign root=rc.getContextPath()>
 <#macro layout>
-  <!DOCTYPE HTML>
-  <html>
-  <head>
-    <title>Jandy</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="${root}/css/style.css">
-    <link rel="stylesheet" href="${root}/webjars/bootstrap-switch/3.3.2/css/bootstrap3/bootstrap-switch.min.css">
-    <link rel="stylesheet" href="${root}/webjars/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="${root}/css/bootstrap-theme.css">
-    <link rel="stylesheet" href="${root}/webjars/font-awesome/4.5.0/css/font-awesome.min.css">
-  </head>
-  <body data-spy="scroll">
-    <#nested/>
-  </body>
-  </html>
-</#macro>
-<#macro layoutFully>
-  <@layout>
-    <script>
-      var ROOT_URL = '${root}';
-    </script>
-    <script src="${root}/webjars/jquery/2.1.4/jquery.min.js"></script>
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Jandy</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="${root}/webjars/Semantic-UI/2.2.2/semantic.min.css">
+  <link rel="stylesheet" href="${root}/webjars/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="${root}/webjars/jquery/2.1.4/jquery.min.js"></script>
 
-    <script src="${root}/js/jandy.js"></script>
-    <nav class="navbar navbar-fixed-top navbar-default">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="${root}/">Jandy</a>
+  <link rel="stylesheet" href="${root}/css/header.css">
+</head>
+<body>
+<header class="ui large borderless stackable menu <#if self??>inverted green</#if>">
+  <a class="header item" href="${root}/">
+    <img src="${root}/images/logo.png">
+  </a>
+  <#if self??>
+    <a class="item" href="#">My Projects</a>
+    <div class="right menu">
+      <div class="ui dropdown item" href="#">
+        <img src="${self.avatarUrl}">
+        <i class="dropdown icon"></i>
+        <div class="menu borderless">
+          <a class="item" href="${root}/logout">Sign Out</a>
         </div>
+      </div>
+    </div>
+  <#else>
+    <a class="item" href="#">Getting Started</a>
+    <div class="ui dropdown item">
+      Docs
+      <i class="dropdown icon"></i>
+      <div class="menu borderless">
+        <a class="item" href="#">API</a>
+      </div>
+    </div>
+    <a class="item" href="#">References</a>
+    <div class="right menu">
+      <form class="item borderless disabled" method="GET" action="${root}/login">
+        <button type="submit" class="ui button green">Sign in</button>
+      </form>
+    </div>
+  </#if>
+</header>
+<script src="${root}/js/jandy.js"></script>
+<#nested />
+<script src="${root}/webjars/Semantic-UI/2.2.2/semantic.min.js"></script>
+<script>
+  'use strict';
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="navbar-nav nav">
-            <#if self??>
-              <li><a href="${root}/repos">Repositories</a></li>
-            </#if>
-          </ul>
-          <ul class="navbar-nav nav navbar-right">
-            <#if self??>
-              <li class="dropdown">
-                <a href="#" style="padding-top: 0;" class="navbar-brand" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <span style="display: inline-block; margin-top: 15px;">${self.login}</span>
-                  <#--<div style="display:inline-block; background-image: url('${user.avatarUrl}'); background-size: cover; width: 30px; height: 30px; padding-top: -10px; border-radius: 5px;">&nbsp;</div>-->
-                  <img src="${self.avatarUrl}" style="display: inline-block; background-size: cover; border-radius: 5px;" width="40px" height="40px">
-                  <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a href="${root}/profile">Profile</a></li>
-                  <li><a href="${root}/logout">Sign out</a></li>
-                </ul>
-              </li>
-            <#else>
-              <li>
-                <form>
-                  <a href="${root}/login" role="button" class="navbar-btn btn btn-default">Sign in with GitHub</a>
-                </form>
-              </li>
-            </#if>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-    <#nested/>
-    <script src="${root}/webjars/d3js/3.5.5/d3.min.js"></script>
-    <script src="${root}/webjars/lodash/3.10.1/lodash.min.js"></script>
-    <script src="${root}/webjars/json2/20140204/json2.min.js"></script>
-    <script src="${root}/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="${root}/webjars/bootstrap-switch/3.3.2/js/bootstrap-switch.min.js"></script>
-    <script src="${root}/js/bootstrap-waitingfor.js"></script>
-    <script src="${root}/webjars/raphaeljs/2.1.4/raphael-min.js"></script>
-  </@layout>
+  $(".ui.dropdown").dropdown();
+</script>
+<script src="${root}/webjars/d3js/3.5.5/d3.min.js"></script>
+<script src="${root}/webjars/lodash/3.10.1/lodash.min.js"></script>
+<script src="${root}/webjars/json2/20140204/json2.min.js"></script>
+<script src="${root}/webjars/raphaeljs/2.1.4/raphael-min.js"></script>
+</body>
+</html>
 </#macro>

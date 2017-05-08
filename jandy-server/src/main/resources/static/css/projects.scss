@@ -1,0 +1,69 @@
+@import "include/fonts.scss";
+
+#title {
+  padding-top: 2rem;
+  padding-bottom: 1.25rem;
+}
+
+#user-status {
+  > span {
+    $font-size: $h1-font-size;
+    font-size: $font-size;
+
+    &:first-child {
+      padding-right: 0.25rem;
+    }
+
+    &:not(:first-child) {
+      font-size: $font-size * 0.625;
+      padding-left: 0.75rem;
+    }
+
+    i {
+      $font-size-i: $font-size * 1.25;
+      font-size: $font-size-i;
+      margin-top: $font-size - $font-size-i;
+    }
+  }
+}
+
+#owner-wrapper {
+  padding-left: 1.5rem;
+}
+
+#projects {
+  margin: -1.5rem 0 0;
+  padding-left: 1.75rem;
+
+  > .row {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: 2px solid gainsboro;
+    border-radius: 15px;
+
+    .pr-name {
+      font-size: $h3-font-size;
+    }
+
+    .pr-status {
+      padding: 0.5rem 2rem;
+
+      .pr-history {
+        padding: 0;
+        border: 1px solid darkgrey;
+        border-radius: 2px;
+      }
+
+      .pr-switch {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        text-align: center;
+
+        i.fa {
+          font-size: $h1-font-size * 2;
+          color: #21BA45;
+        }
+      }
+    }
+  }
+}

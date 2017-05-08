@@ -1,0 +1,43 @@
+#title {
+  padding-top: 2rem;
+  padding-bottom: 1.25rem; }
+
+#user-status > span {
+  font-size: 2rem; }
+  #user-status > span:first-child {
+    padding-right: 0.25rem; }
+  #user-status > span:not(:first-child) {
+    font-size: 1.25rem;
+    padding-left: 0.75rem; }
+  #user-status > span i {
+    font-size: 2.5rem;
+    margin-top: -0.5rem; }
+
+#owner-wrapper {
+  padding-left: 1.5rem; }
+
+#projects {
+  margin: -1.5rem 0 0;
+  padding-left: 1.75rem; }
+  #projects > .row {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: 2px solid gainsboro;
+    border-radius: 15px; }
+    #projects > .row .pr-name {
+      font-size: 1.28rem; }
+    #projects > .row .pr-status {
+      padding: 0.5rem 2rem; }
+      #projects > .row .pr-status .pr-history {
+        padding: 0;
+        border: 1px solid darkgrey;
+        border-radius: 2px; }
+      #projects > .row .pr-status .pr-switch {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        text-align: center; }
+        #projects > .row .pr-status .pr-switch i.fa {
+          font-size: 4rem;
+          color: #21BA45; }
+
+/*# sourceMappingURL=projects.css.map */
