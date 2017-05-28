@@ -5,7 +5,7 @@
 <head>
   <title>Jandy</title>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="${root}/webjars/Semantic-UI/2.2.2/semantic.min.css">
+  <link rel="stylesheet" href="${root}/webjars/Semantic-UI/2.2.10/semantic.min.css">
   <link rel="stylesheet" href="${root}/webjars/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="${root}/webjars/jquery/2.1.4/jquery.min.js"></script>
 
@@ -46,7 +46,7 @@
 </header>
 <script src="${root}/js/jandy.js"></script>
 <#nested />
-<script src="${root}/webjars/Semantic-UI/2.2.2/semantic.min.js"></script>
+<script src="${root}/webjars/Semantic-UI/2.2.10/semantic.min.js"></script>
 <script>
   'use strict';
 
